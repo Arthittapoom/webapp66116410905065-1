@@ -1,6 +1,6 @@
 <?php
     require 'conn.php';
-    $sql = "SELECT * FROM studentbio";
+    $sql = "SELECT * FROM users";
     $result = $conn->query($sql);
     if(!$result){
         die("Error : ". $conn->$conn_error);
@@ -19,7 +19,7 @@
 
 <body>
     <div class="container">
-        <h1>Student Bio</h1><br>
+        <h1>DB</h1><br>
         <table class="table">
             <thead>
                 <tr>
@@ -34,7 +34,7 @@
                 <?php
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<tr><td>".$row["sid"]."</td>"."<td>".$row["sname"]." ".$row["slastname"]."</td>"."<td>".$row["address"]."</td>"."<td>".$row["telephone"]."</td>"."<td>"."<a class='btn btn-warning' href='editbio.php?sid=".$row["sid"]."'>Edit</a>"."</td>";
+                            echo "<tr><td>".$row["uid"]."</td>"."<td>".$row["f_name"]." ".$row["l_name"]."</td>"."<td>".$row["address"]."</td>"."<td>".$row["telephone"]."</td>"."<td>"."<a class='btn btn-warning' href='editbio.php?sid=".$row["uid"]."'>Edit</a>"."</td>";
                             echo "</tr>";    
                         }
                     }else {

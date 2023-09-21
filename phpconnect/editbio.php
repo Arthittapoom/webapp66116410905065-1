@@ -1,9 +1,9 @@
 <?php
-if(!isset($_GET['sid'])){
+if(!isset($_GET['uid'])){
     header("refresh: 0; url=http://localhost/student/mainmenu.php");
 }
 require 'conn.php';
-$sql = "SELECT * FROM studentbio WHERE sid='$_GET[sid]'";
+$sql = "SELECT * FROM users WHERE sid='$_GET[uid]'";
 $result = $conn->query($sql);
 $row = mysqli_fetch_array($result);
 ?>
@@ -25,15 +25,15 @@ $row = mysqli_fetch_array($result);
 
         <label for="sid">sid</label>
 
-        <input type="sid" name="sid" id="sid" value="<?=$row['sid'];?>" />
+        <input type="sid" name="sid" id="sid" value="<?=$row['uid'];?>" />
 
         </p>
 
         <p>
 
             <label for="sname">ชื่อ</label>
-            <input type="text" name="sid" id="sid" value="<?=$row['sid'];?>" hidden>
-            <input type="text" name="sname" id="sname" value="<?=$row['sname'];?>" />
+            <input type="text" name="sid" id="sid" value="<?=$row['uid'];?>" hidden>
+            <input type="text" name="sname" id="sname" value="<?=$row['f_name'];?>" />
 
         </p>
 
@@ -41,7 +41,7 @@ $row = mysqli_fetch_array($result);
 
             <label for="slastname">นามสกุล</label>
 
-            <input type="text" name="slastname" id="slastname" value="<?=$row['slastname'];?>" />
+            <input type="text" name="slastname" id="slastname" value="<?=$row['l_name'];?>" />
 
         </p>
 
