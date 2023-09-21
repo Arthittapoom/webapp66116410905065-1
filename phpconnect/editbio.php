@@ -1,9 +1,9 @@
 <?php
 if(!isset($_GET['uid'])){
-    header("refresh: 0; url=http://localhost/student/mainmenu.php");
+    header("refresh: 0; url=http://localhost/webapp6665-1/phpconnect/mainmenu.php");
 }
 require 'conn.php';
-$sql = "SELECT * FROM users WHERE sid='$_GET[uid]'";
+$sql = "SELECT * FROM users WHERE uid='$_GET[uid]'";
 $result = $conn->query($sql);
 $row = mysqli_fetch_array($result);
 ?>
@@ -23,17 +23,17 @@ $row = mysqli_fetch_array($result);
     <form id="form1" name="form1" method="post" action="editsuccess.php">
         <p>
 
-        <label for="sid">sid</label>
+        <label for="uid">uid</label>
 
-        <input type="sid" name="sid" id="sid" value="<?=$row['uid'];?>" />
+        <input type="uid" name="uid" id="uid" value="<?=$row['uid'];?>" />
 
         </p>
 
         <p>
 
             <label for="sname">ชื่อ</label>
-            <input type="text" name="sid" id="sid" value="<?=$row['uid'];?>" hidden>
-            <input type="text" name="sname" id="sname" value="<?=$row['f_name'];?>" />
+            <input type="text" name="uid" id="uid" value="<?=$row['uid'];?>" hidden>
+            <input type="text" name="f_name" id="f_name" value="<?=$row['f_name'];?>" />
 
         </p>
 
@@ -41,7 +41,7 @@ $row = mysqli_fetch_array($result);
 
             <label for="slastname">นามสกุล</label>
 
-            <input type="text" name="slastname" id="slastname" value="<?=$row['l_name'];?>" />
+            <input type="text" name="l_name" id="l_name" value="<?=$row['l_name'];?>" />
 
         </p>
 

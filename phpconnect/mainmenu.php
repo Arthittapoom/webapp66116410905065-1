@@ -19,7 +19,7 @@
 
 <body>
     <div class="container">
-        <h1>DB</h1><br>
+        <h1>จัดการผู้ใช้</h1><br>
         <table class="table">
             <thead>
                 <tr>
@@ -34,7 +34,12 @@
                 <?php
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<tr><td>".$row["uid"]."</td>"."<td>".$row["f_name"]." ".$row["l_name"]."</td>"."<td>".$row["address"]."</td>"."<td>".$row["telephone"]."</td>"."<td>"."<a class='btn btn-warning' href='editbio.php?sid=".$row["uid"]."'>Edit</a>"."</td>";
+                            echo "<tr><td>".$row["uid"]."</td>"."<td>"
+                            .$row["f_name"]." "
+                            .$row["l_name"]."</td>"."<td>"
+                            .$row["address"]."</td>"."<td>"
+                            .$row["telephone"]."</td>"."<td>"."<a class='btn btn-warning' href='editbio.php?uid="
+                            .$row["uid"]."'>Edit</a>"."</td>";
                             echo "</tr>";    
                         }
                     }else {
@@ -44,7 +49,8 @@
                 ?>
             </tbody>
         </table>
-        <a class="btn btn-success" href='insertbio.php'>Insert Student</a>
+        <a class="btn btn-success " href='insertbio.php'>เพิ่มข้อมูลผู้ใช้</a>
+        <a class="btn btn-warning" href='index.html'>หน้าแรก</a>
     </div>
 </body>
 

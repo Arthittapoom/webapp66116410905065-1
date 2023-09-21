@@ -14,24 +14,24 @@
 
         <p>
 
-        <label for="sid">sid</label>
+        <label for="uid">uid</label>
 
-        <input type="sid" name="sid" id="sid">
-
-        </p>
-
-        <p>
-
-            <label for="sname">ชื่อ</label>
-            <input type="text" name="sname" id="sname">
+        <input type="uid" name="uid" id="uid">
 
         </p>
 
         <p>
 
-            <label for="slastname">นามสกุล</label>
+            <label for="f_name">ชื่อ</label>
+            <input type="text" name="f_name" id="f_name">
 
-            <input type="text" name="slastname" id="slastname">
+        </p>
+
+        <p>
+
+            <label for="l_name">นามสกุล</label>
+
+            <input type="text" name="l_name" id="l_name">
 
         </p>
 
