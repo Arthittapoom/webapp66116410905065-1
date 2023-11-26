@@ -1,0 +1,439 @@
+<template>
+    <div>
+        <div class="row">
+
+
+            <div  class="background-image-container">
+                <div class="row" style="height: 160px;">
+                    <div v-for="(item, index) in Krathong" :key="index"  class="col-4 mb-5">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; 
+                        
+                        
+                        margin: 10px 40px 40px 40px;">
+
+                            
+
+                            <div v-if="item.k_type == 1">
+                                <div style="background-color: #00d824; border-radius: 50%; width: 50px; height: 50px; 
+                        border: 3px solid rgb(255, 255, 255);">
+                                
+                        <!-- <img :src="item.k_img" alt=""> -->
+                         
+                     
+                        <!-- <img src="../../static/ex.png" alt=""> -->
+                            </div>
+                               <img style="width: 150%; height: auto; margin-left: -10px" 
+                            src="../../static/Component 1.png"
+                                alt=""> 
+                            </div>
+
+                            <div v-if="item.k_type == 2">
+                                <div style="background-color: #00d824; border-radius: 50%; width: 50px; height: 50px; 
+                        border: 3px solid rgb(255, 255, 255);">
+                                <img style="width: 150%; height: auto; margin-left: -10px 
+                        
+                        " :src="item.k_img" alt="">
+                            </div>
+                                <img style="width: 150%; height: auto; margin-left: -10px" 
+                             src="../../static/Component 2.png"
+                                 alt=""> 
+                             </div>
+
+                             <div v-if="item.k_type == 3">
+                                <div style="background-color: #00d824; border-radius: 50%; width: 50px; height: 50px; 
+                        border: 3px solid rgb(255, 63, 63);">
+                                <img style="width: 150%; height: auto; margin-left: -10px 
+                        
+                        " :src="item.k_img" alt="">
+                            </div>
+                                <img style="width: 150%; height: auto; margin-left: -10px" 
+                             src="../../static/Component 3.png"
+                                 alt=""> 
+                             </div>
+                            
+
+                            <div style="color: white; font-weight: bold">
+                                <div class="row">
+                                    <div class="col-12">
+                                        {{item.k_message}}
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div>
+                                <button @click="sendMessage(item);" type="button" class="btn btn-warning m-1 p-1">กดใจ</button>
+                            </div>
+                        </div>
+                    </div>
+   
+                </div>
+  
+            </div>
+            <div class="col-4">
+                <div style="background-color: #ffffff;  ">
+                    <div>
+                        <button type="button" class="btn btn-danger w-100 mt-1 ml-1"
+                            style="border-radius: 5px; background-color: rgb(250, 87, 87);">
+                            <img src="../../static/Polygon 3.png" alt="">
+                            <p style="font-size: 30px;">ลอย</p>
+                        </button>
+                    </div>
+                    <div class="mt-1 ml-1" style="background-color: #ffbfbf; border-radius: 5px; width: 100%; 
+                    height: 285px;">
+                        <div>
+                            <div class="row ">
+                                <div class="col-4 m-0 p-0">
+                                    <button type="button" class="btn btn-danger w-50 mt-1 ml-3"
+                                        style="width: 50px; height: 50px; border-radius: 5px; background-color: rgb(250, 87, 87);">
+
+
+                                        < </button>
+                                </div>
+                                <div class="col-4 m-0 p-0 mt-1">
+                                    <div
+                                        style="border-radius: 50px; background-color: rgb(0, 216, 126); width: 50px; height: 50px; ">
+
+                                    </div>
+                                </div>
+                                <div class="col-4 m-0 p-0">
+                                    <button type="button" class="btn btn-danger w-50 mt-1 ml-1"
+                                        style=" width: 50px; height: 50px; border-radius: 5px; background-color: rgb(250, 87, 87);">
+
+
+                                        > </button>
+                                </div>
+
+                                <div class="row" style="text-align: center;">
+                                    <div class="col-12 m-0 p-0 pl-2">
+                                        10 เพรช 10 วิ
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <p>ข้อความ</p>
+                        </div>
+                        <div class="m-1 pb-1">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 m-0 pl-1">
+                <div style="background-color: #ffffff;">
+                    <div class="row">
+                        <div class="col-12 m-1" style="text-align: center; 
+                        background-color: rgb(0, 216, 126); border-radius: 5px;
+                        height: 50px;">
+                            <div class="mt-2">
+                                เพชร 100
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row" style="background-color: rgb(255, 255, 255);">
+                        <div class="col-6 m-0 p-0">
+                            <div class="mt-2 ml-2">
+                                เงิน 200
+                            </div>
+
+                        </div>
+
+                        <div class="col-6 m-0 p-0">
+                            <button type="button" class="btn btn-outline-success" style="width: 100%; height: 40px;">
+                                เติม
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="mt-2" style=" background-color: rgb(255, 128, 128); 
+                    border-radius: 5px; height: 305px; width: 100%;">
+                        <div>
+                            <p style="font-size: 30px;  text-align: center; ">0</p>
+                        </div>
+                        <div>
+                            <p style="text-align: center;">คลิก 10 ครั้งเท่ากับ 1 เพรช</p>
+                        </div>
+
+
+                        <div>
+                            <button type="button" class="btn btn-danger mt-1 ml-1" style="border-radius: 5px; background-color: rgb(255, 221, 221);
+                        width: 95%;
+                        height: 175px;
+                        ">
+                                <p style="font-size: 30px; color: rgb(250, 87, 87);">คลิก</p>
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-4">
+                <div style="background-color: rgb(43, 216, 0));">
+
+                    <div>
+                        <div class="row p-0 m-0">
+                            <div class="col-12">
+                                <div>
+                                    ลำดับ
+                                </div>
+                                <div style="font-size: 15px; color: rgb(0, 27, 85);">
+                                    1 name 0
+                                </div>
+
+                            </div>
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        ลำดับ
+                                    </td>
+                                    <td>
+                                        ชื่อ
+                                    </td>
+                                    <td>
+                                        คะแนน
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>
+                                        ชื่อ
+                                    </td>
+                                    <td>
+                                        200
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2
+                                    </td>
+                                    <td>
+                                        ชื่อ
+                                    </td>
+                                    <td>
+                                        100
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        ชื่อ
+                                    </td>
+                                    <td>
+                                        100
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        4
+                                    </td>
+                                    <td>
+                                        ชื่อ
+                                    </td>
+                                    <td>
+                                        100
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        5
+                                    </td>
+                                    <td>
+                                        ชื่อ
+                                    </td>
+                                    <td>
+                                        100
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div style="background-color: #00d824;
+                    border-radius: 5px;" class="m-0 p-0 m-1">
+                        <div style="color: #ffffff;">
+                            กระทงที่บันทึก
+                        </div>
+                        <div>
+                            <div class="chat-box">
+                                <div class="message">
+                                    <div class="message-content">
+                                        ชื่อ <br> ข้อความ
+                                    </div>
+                                </div>
+                                <div class="message">
+                                    <div class="message-content">
+                                        ชื่อ <br> ข้อความ
+                                    </div>
+                                </div>
+                                <div class="message">
+                                    <div class="message-content">
+                                        ชื่อ <br> ข้อความ
+                                    </div>
+                                </div>
+                                <div class="message">
+                                    <div class="message-content">
+                                        ชื่อ <br> ข้อความ
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div style="
+        height: 100px;
+        width: 100%;
+        background-color: rgb(255, 197, 197);
+        border-radius: 5px;
+        margin: 3px;
+        padding: 10px;
+        ">
+
+            <div class="" style="
+        text-align: center;
+        ">
+                IG : nine_em
+                <br>
+                FB : อาทิตภูมิ หวานหอม
+                <br>
+                LINE : 0933891077
+
+            </div>
+
+
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    data(){
+        return {
+            Krathong: [
+                {
+                    k_img:'../../static/ex.png',
+                    k_type:'1',
+                    k_name:'a1',
+                    k_message:'aa1',
+                    k_id: '',
+                },
+                {
+                    k_img:'../../static/ex.png',
+                    k_type:'2',
+                    k_name:'a2',
+                    k_message:'aa2',
+                    k_id: '',
+                }
+                ,
+                {
+                    k_img:'../../static/ex.png',
+                    k_type:'3',
+                    k_name:'a3',
+                    k_message:'aa3',
+                    k_id: '',
+                }
+                ,
+                {
+                    k_img:'../../static/ex.png',
+                    k_type:'1',
+                    k_name:'a3',
+                    k_message:'aa4',
+                    k_id: '',
+                }
+                ,
+                {
+                    k_img:'../../static/ex.png',
+                    k_type:'1',
+                    k_name:'a3',
+                    k_message:'aa5',
+                    k_id: '',
+                }
+                ,
+                {
+                    k_img:'../../static/ex.png',
+                    k_type:'3',
+                    k_name:'a3',
+                    k_message:'aa6',
+                    k_id: '',
+                }
+                ,
+                {
+                    k_img:'../../static/ex.png',
+                    k_type:'3',
+                    k_name:'a3',
+                    k_message:'aa7',
+                    k_id: '',
+                }
+                ,
+                {
+                    k_img:'../../static/ex.png',
+                    k_type:'2',
+                    k_name:'a3',
+                    k_message:'aa8',
+                    k_id: '',
+                }
+                ,
+                {
+                    k_img:'../../static/ex.png',
+                    k_type:'1',
+                    k_name:'a3',
+                    k_message:'aa9',
+                    k_id: '',
+                }
+            ],
+        }
+    },
+    methods:{
+        sendMessage(item){
+            alert(item.k_message);
+            
+            console.log(item.k_img);
+        },
+    },
+    mounted() {
+    
+  },
+}
+</script>
+
+<style>
+.chat-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.user-message {
+    text-align: right;
+}
+
+.message-content {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.background-image-container {
+    height: 480px;
+    width: 100%;
+    background-image: url('../../static/w.png');
+    /* ตัวอื่น ๆ ของ CSS */
+}
+</style>
